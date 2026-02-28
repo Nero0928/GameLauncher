@@ -146,6 +146,7 @@ public partial class LoginForm : Form
     private Label lblVersionStatus = null!;
     private Label lblStatus = null!;
     private Button btnLogin = null!;
+    private Button btnExit = null!;
 
     private void LoadSavedCredentials()
     {
