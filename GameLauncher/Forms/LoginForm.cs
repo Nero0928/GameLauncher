@@ -226,7 +226,7 @@ public partial class LoginForm : Form
                 chkRemember.Checked
             );
 
-            if (result.Success)
+            if (result.IsSuccess)
             {
                 Program.CurrentUser = result.Username;
                 Program.AuthToken = result.AuthToken;

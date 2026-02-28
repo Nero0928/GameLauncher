@@ -1,5 +1,5 @@
-using GameLauncher.Network.Http;
-using GameLauncher.Network.Models;
+using GameLauncher.Core.Models;
+using GameLauncher.Core.Services;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -51,7 +51,7 @@ public class LoginManager
                 SaveCredentials(username);
             }
 
-            return LoginResult.Success(
+            return LoginResult.Ok(
                 response.AuthToken, 
                 response.Username ?? username,
                 response.UserInfo
@@ -129,17 +129,17 @@ public class LoginManager
 /// </summary>
 public class LoginResult
 {
-    public bool Success { get; set; }
+    public bool IsSuccess { get; set; }
     public string Message { get; set; } = string.Empty;
     public string? AuthToken { get; set; }
     public string? Username { get; set; }
     public UserInfo? UserInfo { get; set; }
 
-    public static LoginResult Success(string token, string username, UserInfo? userInfo = null)
+    public static LoginResult Ok(string token, string username, UserInfo? userInfo = null)
     {
         return new LoginResult
         {
-            Success = true,
+            IsSuccess = true,
             AuthToken = token,
             Username = username,
             UserInfo = userInfo,
@@ -151,7 +151,7 @@ public class LoginResult
     {
         return new LoginResult
         {
-            Success = false,
+            IsSuccess = false,
             Message = message
         };
     }

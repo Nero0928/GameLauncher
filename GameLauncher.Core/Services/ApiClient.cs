@@ -1,9 +1,9 @@
-using GameLauncher.Network.Models;
+using GameLauncher.Core.Models;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 
-namespace GameLauncher.Network.Http;
+namespace GameLauncher.Core.Services;
 
 /// <summary>
 /// HTTP API 客戶端 - 處理與伺服器的通訊

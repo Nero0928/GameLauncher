@@ -1,4 +1,6 @@
-namespace GameLauncher.Network.Models;
+using System.Text.Json;
+
+namespace GameLauncher.Core.Models;
 
 /// <summary>
 /// 登入請求模型

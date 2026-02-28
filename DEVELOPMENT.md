@@ -19,17 +19,16 @@ GameLauncher/
 │   ├── Program.cs              # 程式入口
 │   └── GameLauncher.csproj
 ├── GameLauncher.Core/          # 核心邏輯 (獨立類別庫)
+│   ├── Models/
+│   │   └── LoginModels.cs      # 資料模型
+│   ├── Services/
+│   │   └── ApiClient.cs        # HTTP API 客戶端
 │   ├── Auth/
 │   │   └── LoginManager.cs     # 登入管理
 │   ├── Version/
 │   │   └── VersionChecker.cs   # 版本驗證
 │   └── Config/
 │       └── AppConfig.cs        # 設定管理
-├── GameLauncher.Network/       # 網路層 (獨立類別庫)
-│   ├── Http/
-│   │   └── ApiClient.cs        # HTTP API 客戶端
-│   └── Models/
-│       └── LoginModels.cs      # 資料模型
 ├── test-server.js              # Node.js 測試伺服器
 └── GameLauncher.sln            # Visual Studio 方案檔
 ```
@@ -114,7 +113,7 @@ node test-server.js
 
 | Launcher_V2 | 本專案 | 用途 |
 |------------|--------|------|
-| `KartriderLibrary/Network/` | `GameLauncher.Network/` | 網路通訊 |
+| `KartriderLibrary/Network/` | `GameLauncher.Core/Services/` | 網路通訊 |
 | `KartRider.Data/Forms/` | `GameLauncher/Forms/` | UI 表單 |
 | `GameSupport.cs` | `LoginManager.cs` | 登入邏輯 |
 | `PatchUpdate.cs` | `VersionChecker.cs` | 版本驗證 |
@@ -131,8 +130,7 @@ node test-server.js
 
 ### 1. 分層架構
 - UI 層 (Forms)
-- 核心邏輯層 (Core)
-- 網路層 (Network)
+- 核心邏輯層 (Core) - 包含模型、服務、認證、版本管理
 
 ### 2. 非同步程式設計
 ```csharp

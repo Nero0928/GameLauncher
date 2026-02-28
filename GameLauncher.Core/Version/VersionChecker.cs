@@ -1,5 +1,5 @@
-using GameLauncher.Network.Http;
-using GameLauncher.Network.Models;
+using GameLauncher.Core.Models;
+using GameLauncher.Core.Services;
 
 namespace GameLauncher.Core.Version;
 
