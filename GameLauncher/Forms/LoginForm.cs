@@ -137,7 +137,7 @@ public partial class LoginForm : Form
             chkRemember,
             lblVersionStatus, lblStatus,
             btnLogin, btnExit
-        };
+        });
     }
 
     private TextBox txtUsername = null!;
